@@ -13,7 +13,7 @@ class Student
 
   def self.create_from_collection(students_array)
     students_array.each do |i|
-      Student.new(student_hash)
+      Student.new(i)
     end
   end
 
