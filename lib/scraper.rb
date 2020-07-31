@@ -9,6 +9,10 @@ class Scraper
     student = doc.css(".student-card a")
     student.collect do |i|
       {:name => element.css(".student-name").text , 
+      :location => element.css(".student-location").text, 
+      :profile_url => element.attr('href')
+      }
+    end
   end
 
   def self.scrape_profile_page(profile_url)
