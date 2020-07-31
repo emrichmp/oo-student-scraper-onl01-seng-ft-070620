@@ -31,8 +31,8 @@ class Scraper
         hash[:blog] = i.attr('href')
       end
     end
-    hash[:profile_quote] = doc.css(".vitals-container .vitals-text-container .profile-quote").text
-    hash[:bio] = doc.css(".bio-block.details-block .bio-content.content-holder .description-holder p").text
+    hash[:profile_quote] = data.css(".vitals-container .vitals-text-container .profile-quote").text
+    hash[:bio] = data.css(".bio-block.details-block .bio-content.content-holder .description-holder p").text
     
     hash
   end
