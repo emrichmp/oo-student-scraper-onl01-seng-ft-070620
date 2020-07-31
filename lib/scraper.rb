@@ -7,10 +7,10 @@ class Scraper
     html = open(index_url)
     data = Nokogiri::HTML(html)
     student_cards = data.css(".student-card a")
-    student_cards.collect do |element|
-      {:name => element.css(".student-name").text ,
-        :location => element.css(".student-location").text,
-        :profile_url => element.attr('href')
+    student_cards.collect do |i|
+      {:name => i.css(".student-name").text ,
+        :location => i.css(".student-location").text,
+        :profile_url => i.attr('href')
       }
     end
   end
@@ -19,7 +19,10 @@ class Scraper
     html = open(profile_url)
     data = Nokogiri::HTML(html)
     hash = {}
-    social = data.css()
+    social = data.css(".vitals-container .social-icon-container a")
+    social.each do |i|
+      
+    end
   end
 
 end
