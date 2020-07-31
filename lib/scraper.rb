@@ -21,8 +21,17 @@ class Scraper
     hash = {}
     social = data.css(".vitals-container .social-icon-container a")
     social.each do |i|
-      
+      if i.attr('href').include?("twitter")
+        hash[:twitter] = i.attr('href')
+      elsif i.attr('href').include?("linkedin")
+        hash[:linkedin] = i.attr('href')
+      elsif i.attr('href').include?("github")
+        hash[:github] = i.attr('href')
+      elsif i.attr('href').end_with?("com/")
+        hash[:blog] = i.attr('href')
+      end
     end
+    
   end
 
 end
