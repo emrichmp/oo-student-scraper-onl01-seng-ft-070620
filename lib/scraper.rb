@@ -17,7 +17,9 @@ class Scraper
 
   def self.scrape_profile_page(profile_url)
     html = open(profile_url)
-    doc 
+    data = Nokogiri::HTML(html)
+    hash = {}
+    social = data.css()
   end
 
 end
